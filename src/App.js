@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Analysis from './component/analysis/Analysis'
 
-function App() {
-  return <div className="App" />;
+class App extends Component {
+  render() {
+    return (
+      <Analysis/>
+    );
+  } 
 }
-
 export default App;
