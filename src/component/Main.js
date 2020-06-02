@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BoxTutorial from './BoxTutorial';
 import StyleTutorial from './StyleTutorial';
 import GridTutorial1 from './GridTutorial1';
+import ColorThemeTutorial from './ColorThemeTutorial';
 
 class Main extends Component {
   render() {
@@ -9,7 +10,8 @@ class Main extends Component {
       <div styles={{ padding: '20px' }}>
         {/* <BoxTutorial /> */}
         {/* <StyleTutorial /> */}
-        <GridTutorial1 />
+        {/* <GridTutorial1 /> */}
+        <ColorThemeTutorial />
       </div>
     );
   }
