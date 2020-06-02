@@ -3,6 +3,7 @@ import BoxTutorial from './BoxTutorial';
 import StyleTutorial from './StyleTutorial';
 import GridTutorial1 from './GridTutorial1';
 import ColorThemeTutorial from './ColorThemeTutorial';
+import TabTutorial from './TabTutorial';
 
 class Main extends Component {
   render() {
@@ -12,6 +13,7 @@ class Main extends Component {
         {/* <StyleTutorial /> */}
         {/* <GridTutorial1 /> */}
         <ColorThemeTutorial />
+        <TabTutorial />
       </div>
     );
   }
