@@ -84,7 +84,7 @@ const ColorThemeTutorial = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.menuTitle}>
-              News
+              운전왕
             </Typography>
             <div className={classes.menuButton}>
               <Button
@@ -160,25 +160,7 @@ const ColorThemeTutorialContent = () => {
     },
   }));
   const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      <Button className={classes.contentButtonDark} variant="contained">
-        Button
-      </Button>
-      <Button className={classes.contentButtonMain} variant="contained">
-        Button
-      </Button>
-      <Button className={classes.contentButtonLight} variant="contained">
-        Button
-      </Button>
-      <Typography variant="h6" className={classes.contentTitle1}>
-        Typography
-      </Typography>
-      <Typography variant="h6" className={classes.contentTitle2}>
-        Typography
-      </Typography>
-    </div>
-  );
+  return <div className={classes.root}></div>;
 };
 
 export default ColorThemeTutorial;
