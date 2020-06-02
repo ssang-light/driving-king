@@ -42,7 +42,7 @@ git commit -m "커밋 메시지"
 6. 작업 완료하고 푸시하기
 
 ```
-git push --set-upstream origin master
+git push --set-upstream origin branch
 ```
 
 7. `Github` 에서 PR 작성
