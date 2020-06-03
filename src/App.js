@@ -2,11 +2,11 @@ import React, { Fragment } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Home from './component/home/Home';
-import Analysis from './component/analysis/Analysis';
-import Ranking from './component/ranking/Ranking';
-import Difficulty from './component/difficulty/Difficulty';
-import Login from './component/login/Login';
+import Home from './pages/home/Home';
+import Analysis from './pages/analysis/Analysis';
+import Ranking from './pages/ranking/Ranking';
+import Difficulty from './pages/difficulty/Difficulty';
+import Login from './pages/login/Login';
 import { Switch, Route, Link, BrowserRouter } from 'react-router-dom';
 
 function App() {
