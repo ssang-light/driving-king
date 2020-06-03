@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     padding: theme.spacing(3),
     background: '#eeeeee',
@@ -20,35 +20,21 @@ class Profile extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Grid container spacing={3}>
-          <Grid
-            // container
-            // direction="row"
-            // justify="center"
-            // alignItems="center"
-            // item
-            lg={12}
-            md={12}
-            sm={12}
-            xs={12}
-          >
-            <Paper className={classes.paper}>
-              <div>
-                <img
-                  alt="Your Photo"
-                  width="100"
-                  height="100"
-                  src="asset/images/hyosung.JPG"
-                />
-                <div>
-                  <div>운전 경력{': 6년'} </div>
-                  <div>지역 {': 경기'}</div>
-                  <div>면허 취득일{' 2014.12.24'}</div>
-                </div>
-              </div>
-            </Paper>
-          </Grid>
-        </Grid>
+        <Paper className={classes.paper}>
+          <div>
+            <img
+              alt="Your Photo"
+              width="100"
+              height="100"
+              src="asset/images/hyosung.JPG"
+            />
+            <div>
+              <div>운전 경력{': 6년'} </div>
+              <div>지역 {': 경기'}</div>
+              <div>면허 취득일{' 2014.12.24'}</div>
+            </div>
+          </div>
+        </Paper>
       </div>
     );
   }
