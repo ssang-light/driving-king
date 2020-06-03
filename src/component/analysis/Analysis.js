@@ -14,6 +14,7 @@ const styles = theme => ({
     color: theme.palette.text.primary,
   },
 });
+
 class Analysis extends Component {
   render() {
     const { classes } = this.props;
@@ -53,4 +54,5 @@ class Analysis extends Component {
     );
   }
 }
+
 export default withStyles(styles)(Analysis);
