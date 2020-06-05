@@ -80,44 +80,36 @@ export default function ProfilePage(props) {
             <div className={classes.description}></div>
             <div id="progress">
               <GridContainer>
-                <GridItem xs={6} sm={6} md={6}>
+                <GridItem xs={6} sm={6} md={6} justify="center">
                   <div className={classes.title}>
                     <h3>나의 운전 점수</h3>
                   </div>
-                  <CustomLinearProgress
-                    variant="determinate"
-                    color="primary"
-                    value={30}
-                  />
-                  <CustomLinearProgress
-                    variant="determinate"
-                    color="info"
-                    value={60}
-                  />
+                  <div>총점 : 75</div>
                   <CustomLinearProgress
                     variant="determinate"
                     color="success"
-                    value={100}
-                    style={{ width: '35%', display: 'inline-block' }}
+                    value={75}
+                    style={{ width: '100%', display: 'inline-block' }}
                   />
+                  <div>차선 침범 점수 : 30</div>
                   <CustomLinearProgress
                     variant="determinate"
                     color="warning"
-                    value={100}
-                    style={{ width: '20%', display: 'inline-block' }}
+                    value={30}
+                    style={{ width: '100%', display: 'inline-block' }}
                   />
+                  <div>과속 점수 : 25</div>
                   <CustomLinearProgress
                     variant="determinate"
                     color="danger"
                     value={25}
-                    style={{ width: '45%', display: 'inline-block' }}
+                    style={{ width: '100%', display: 'inline-block' }}
                   />
                 </GridItem>
               </GridContainer>
-              <GridContainer justify="right">
+              <GridContainer justify="left">
                 <div className={classes.title}>
                   <h3>나의 운전 등급</h3>
-
                   <GridItem xs={6} sm={6} md={6}>
                     {/* <Button>일반</Button> */}
                     {/* <Button color="primary">1년 무사고</Button> */}
@@ -137,7 +129,7 @@ export default function ProfilePage(props) {
                   color="primary"
                   tabs={[
                     {
-                      tabButton: 'Studio',
+                      tabButton: '운전 차량',
                       tabIcon: Camera,
                       tabContent: (
                         <GridContainer justify="center">
@@ -169,7 +161,7 @@ export default function ProfilePage(props) {
                       ),
                     },
                     {
-                      tabButton: 'Work',
+                      tabButton: '지역 숙련도',
                       tabIcon: Palette,
                       tabContent: (
                         <GridContainer justify="center">
