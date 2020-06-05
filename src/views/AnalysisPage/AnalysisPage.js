@@ -16,6 +16,7 @@ import GridItem from 'components/Grid/GridItem.js';
 import HeaderLinks from 'components/Header/HeaderLinks.js';
 import NavPills from 'components/NavPills/NavPills.js';
 import Parallax from 'components/Parallax/Parallax.js';
+import CustomLinearProgress from 'components/CustomLinearProgress/CustomLinearProgress.js';
 
 import profile from 'assets/img/faces/younho9.jpg';
 
@@ -32,6 +33,7 @@ import work5 from 'assets/img/examples/clem-onojegaw.jpg';
 
 import styles from 'assets/jss/material-kit-react/views/profilePage.js';
 import NavBar from 'components/DrivingKing/NavBar';
+import Badge from 'components/Badge/Badge.js';
 
 const useStyles = makeStyles(styles);
 
@@ -59,7 +61,9 @@ export default function ProfilePage(props) {
                   </div>
                   <div className={classes.name}>
                     <h3 className={classes.title}>추연호</h3>
-                    <h6>DESIGNER</h6>
+                    <h6>운전경력 : 6년</h6>
+                    <h6>지역: 경기</h6>
+                    <h6>면허 취득일 : 2014. 12. 24 </h6>
                     <Button justIcon link className={classes.margin5}>
                       <i className={'fab fa-twitter'} />
                     </Button>
@@ -73,13 +77,58 @@ export default function ProfilePage(props) {
                 </div>
               </GridItem>
             </GridContainer>
-            <div className={classes.description}>
-              <p>
-                An artist of considerable range, Chet Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.{' '}
-              </p>
+            <div className={classes.description}></div>
+            <div id="progress">
+              <GridContainer>
+                <GridItem xs={6} sm={6} md={6}>
+                  <div className={classes.title}>
+                    <h3>나의 운전 점수</h3>
+                  </div>
+                  <CustomLinearProgress
+                    variant="determinate"
+                    color="primary"
+                    value={30}
+                  />
+                  <CustomLinearProgress
+                    variant="determinate"
+                    color="info"
+                    value={60}
+                  />
+                  <CustomLinearProgress
+                    variant="determinate"
+                    color="success"
+                    value={100}
+                    style={{ width: '35%', display: 'inline-block' }}
+                  />
+                  <CustomLinearProgress
+                    variant="determinate"
+                    color="warning"
+                    value={100}
+                    style={{ width: '20%', display: 'inline-block' }}
+                  />
+                  <CustomLinearProgress
+                    variant="determinate"
+                    color="danger"
+                    value={25}
+                    style={{ width: '45%', display: 'inline-block' }}
+                  />
+                </GridItem>
+              </GridContainer>
+              <GridContainer justify="right">
+                <div className={classes.title}>
+                  <h3>나의 운전 등급</h3>
+
+                  <GridItem xs={6} sm={6} md={6}>
+                    {/* <Button>일반</Button> */}
+                    {/* <Button color="primary">1년 무사고</Button> */}
+                    {/* <Button color="info">2년 무사고</Button> */}
+                    <Button color="success">3년 무사고</Button>
+                    {/* <Button color="warning">5년 무사고</Button> */}
+                    {/* <Button color="danger">10년 무사고</Button> */}
+                    {/* <Button color="rose">Rose</Button> */}
+                  </GridItem>
+                </div>
+              </GridContainer>
             </div>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
