@@ -4,9 +4,9 @@ import classNames from 'classnames';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 // @material-ui/icons
-import Camera from '@material-ui/icons/Camera';
-import Palette from '@material-ui/icons/Palette';
-import Favorite from '@material-ui/icons/Favorite';
+import ThumbUp from '@material-ui/icons/ThumbUp';
+import Map from '@material-ui/icons/Map';
+import DriveEta from '@material-ui/icons/DriveEta';
 // core components
 import Header from 'components/Header/Header.js';
 import Footer from 'components/Footer/Footer.js';
@@ -20,7 +20,7 @@ import CustomLinearProgress from 'components/CustomLinearProgress/CustomLinearPr
 
 import profile from 'assets/img/faces/younho9.jpg';
 
-import studio1 from 'assets/img/examples/studio-1.jpg';
+import sm5 from 'assets/img/cars/sm5.png';
 import studio2 from 'assets/img/examples/studio-2.jpg';
 import studio3 from 'assets/img/examples/studio-3.jpg';
 import studio4 from 'assets/img/examples/studio-4.jpg';
@@ -131,13 +131,13 @@ export default function ProfilePage(props) {
                   tabs={[
                     {
                       tabButton: '운전 차량',
-                      tabIcon: Camera,
+                      tabIcon: DriveEta,
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
                             <img
                               alt="..."
-                              src={studio1}
+                              src={sm5}
                               className={navImageClasses}
                             />
                             <img
@@ -163,7 +163,7 @@ export default function ProfilePage(props) {
                     },
                     {
                       tabButton: '지역 숙련도',
-                      tabIcon: Palette,
+                      tabIcon: Map,
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
@@ -200,7 +200,7 @@ export default function ProfilePage(props) {
                     },
                     {
                       tabButton: '즐겨찾는 코스',
-                      tabIcon: Favorite,
+                      tabIcon: ThumbUp,
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
@@ -228,7 +228,7 @@ export default function ProfilePage(props) {
                             />
                             <img
                               alt="..."
-                              src={studio1}
+                              src={sm5}
                               className={navImageClasses}
                             />
                           </GridItem>
