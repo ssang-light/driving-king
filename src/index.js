@@ -13,6 +13,7 @@ import Home from 'views/Home/Home.js';
 import AnalysisPage from 'views/AnalysisPage/AnalysisPage.js';
 import RankingPage from 'views/RankingPage/RankingPage.js';
 import DifficultyPage from 'views/DifficultyPage/DifficultyPage.js';
+import Components from 'views/Components/Components';
 var hist = createBrowserHistory();
 
 ReactDOM.render(
@@ -24,6 +25,7 @@ ReactDOM.render(
       <Route path="/analysis" component={AnalysisPage} />
       <Route path="/ranking" component={RankingPage} />
       <Route path="/difficulty" component={DifficultyPage} />
+      <Route path="/components" component={Components} />
       <Route path="/" exact={true} component={Home} />
     </Switch>
   </Router>,
