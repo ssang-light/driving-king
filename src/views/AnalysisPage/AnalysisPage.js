@@ -198,7 +198,7 @@ export default function ProfilePage(props) {
                       ),
                     },
                     {
-                      tabButton: 'Favorite',
+                      tabButton: '즐겨찾는 코스',
                       tabIcon: Favorite,
                       tabContent: (
                         <GridContainer justify="center">
