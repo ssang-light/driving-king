@@ -80,7 +80,7 @@ export default function ProfilePage(props) {
             <div className={classes.description}></div>
             <div id="progress">
               <GridContainer>
-                <GridItem xs={6} sm={6} md={6} justify="center">
+                <GridItem xs={6} sm={6} md={6} lg={6} justify="center">
                   <div className={classes.title}>
                     <h3>나의 운전 점수</h3>
                   </div>
@@ -106,20 +106,21 @@ export default function ProfilePage(props) {
                     style={{ width: '100%', display: 'inline-block' }}
                   />
                 </GridItem>
-              </GridContainer>
-              <GridContainer justify="left">
-                <div className={classes.title}>
-                  <h3>나의 운전 등급</h3>
-                  <GridItem xs={6} sm={6} md={6}>
-                    {/* <Button>일반</Button> */}
-                    {/* <Button color="primary">1년 무사고</Button> */}
-                    {/* <Button color="info">2년 무사고</Button> */}
-                    <Button color="success">3년 무사고</Button>
-                    {/* <Button color="warning">5년 무사고</Button> */}
-                    {/* <Button color="danger">10년 무사고</Button> */}
-                    {/* <Button color="rose">Rose</Button> */}
-                  </GridItem>
-                </div>
+                {/* </GridContainer> */}
+                <GridContainer justify="left">
+                  <div className={classes.title}>
+                    <h3>나의 운전 등급</h3>
+                    <GridItem xs={6} sm={6} md={6} lg={6}>
+                      {/* <Button>일반</Button> */}
+                      {/* <Button color="primary">1년 무사고</Button> */}
+                      {/* <Button color="info">2년 무사고</Button> */}
+                      <Button color="success" size="lg"> 3년 무사고 </Button>
+                      {/* <Button color="warning">5년 무사고</Button> */}
+                      {/* <Button color="danger">10년 무사고</Button> */}
+                      {/* <Button color="rose">Rose</Button> */}
+                    </GridItem>
+                  </div>
+                </GridContainer>
               </GridContainer>
             </div>
             <GridContainer justify="center">
