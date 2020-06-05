@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 // @material-ui/core components
@@ -45,7 +45,7 @@ export default function ProfilePage(props) {
   );
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   return (
-    <div>
+    <Fragment>
       <NavBar />
       <Parallax small filter image={require('assets/img/profile-bg.jpg')} />
       <div className={classNames(classes.main, classes.mainRaised)}>
@@ -200,6 +200,6 @@ export default function ProfilePage(props) {
           </div>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 }
