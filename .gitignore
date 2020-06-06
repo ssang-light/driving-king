@@ -24,3 +24,6 @@ yarn-error.log*
 
 # bash
 .bashrc
+
+# api keys
+.env
