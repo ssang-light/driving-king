@@ -90,11 +90,11 @@ export default function ProfilePage(props) {
                     <h3>나의 운전 점수</h3>
                     <h4 size="1">누적 운전 시간 : 9 시간 45 분</h4>
                   </div>
-                  <div>총점 : 75</div>
+                  <div>총점 : 77</div>
                   <CustomLinearProgress
                     variant="determinate"
                     color="success"
-                    value={75}
+                    value={77}
                     style={{ width: '100%', display: 'inline-block' }}
                   />
                   <div>차선 침범 점수 : 30</div>
