@@ -13,6 +13,11 @@ import CustomTabs from 'components/CustomTabs/CustomTabs.js';
 
 import styles from 'assets/jss/material-kit-react/views/componentsSections/tabsStyle.js';
 import NavBar from 'components/DrivingKing/NavBar';
+//==image===============================================
+import img1 from 'assets/img/feed_course/img1.png';
+import img2 from 'assets/img/feed_course/img2.png';
+import img3 from 'assets/img/feed_course/img3.png';
+//=============================================================
 
 //==notification===============================================
 import Check from '@material-ui/icons/Check';
@@ -27,6 +32,7 @@ import Clearfix from 'components/Clearfix/Clearfix.js';
 import styles2 from 'assets/jss/material-kit-react/views/componentsSections/typographyStyle.js';
 
 import image from 'assets/img/faces/avatar.jpg';
+import classNames from 'classnames';
 
 //============================================================
 
@@ -67,6 +73,12 @@ export default function ProfilePage(props) {
   const classes_carousel = useStyles_carousel();
   const classes_button = useStyles_button();
   const classes_custom_input = useStyles_custom_input();
+  const imageClasses = classNames(
+    classes.imgRaised,
+    classes.imgRoundedCircle,
+    classes.imgFluid,
+  );
+  const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   const carousel_settings = {
     dots: true,
     infinite: true,
@@ -83,13 +95,13 @@ export default function ProfilePage(props) {
         <GridContainer justify="center">
           <GridItem xs={4} sm={12} md={8}>
             <h3>
-              <small>드라이빙 피드</small>
+              <small>Driving Feed</small>
             </h3>
             <CustomTabs
               headerColor="primary"
               tabs={[
                 {
-                  tabName: 'Profile',
+                  tabName: 'Drive Feed',
                   tabIcon: Face,
                   tabContent: (
                     <p className={classes_image.textCenter}>
@@ -119,8 +131,9 @@ export default function ProfilePage(props) {
                             sm={12}
                             className={classes_image.marginLeft}
                           >
-                            <h4>운전 점수 :</h4>
-                            <h4>4시간 8분 :</h4>
+                            <h4>누적 운전시간 : 152 h</h4>
+
+                            <h4>피드 운전시간 :3h 32m </h4>
                           </GridItem>
                         </GridContainer>
                         <GridContainer />
@@ -129,9 +142,22 @@ export default function ProfilePage(props) {
                       코스로 강릉찍고 오니 역시 자전거보다는 자동차인것
                       같습니다.
                       <div>
+                        <div>
+                          <GridContainer justify="left">
+                            <GridItem xs={12} sm={12} md={8}>
+                              <Button color="success">서울</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button color="warning">강릉</Button>
+                            </GridItem>
+                          </GridContainer>
+                        </div>
                         <GridContainer>
                           <GridItem xs={1} sm={0} md={4} lg={1}>
-                            <Button justIcon round color="primary">
+                            <Button justIcon round color="rose">
                               <Favorite className={classes_button.icons} />
                             </Button>
                           </GridItem>
@@ -157,74 +183,481 @@ export default function ProfilePage(props) {
                   ),
                 },
                 {
-                  tabName: 'Messages',
+                  tabName: 'Driving Route',
                   tabIcon: Chat,
                   tabContent: (
-                    <p className={classes.textCenter}>
-                      I think that’s a responsibility that I have, to push
-                      possibilities, to show people, this is the level that
-                      things could be at. I will be the leader of a company that
-                      ends up being worth billions of dollars, because I got the
-                      answers. I understand culture. I am the nucleus. I think
-                      that’s a responsibility that I have, to push
-                      possibilities, to show people, this is the level that
-                      things could be at.
+                    <GridItem>
+                      양양 지나면서 구도로 달리는 것도 좋은 드라이브 코스가 많을
+                      것 같지만 너무 피곤해서 그냥 빠른길로 갔습니다.
+                      <GridItem xs={0} sm={0} md={0}>
+                        <img
+                          width="1050px"
+                          alt="..."
+                          src={img1}
+                          className={navImageClasses}
+                        />
+                      </GridItem>
+                      <div>
+                        <GridContainer>
+                          <GridItem xs={1} sm={0} md={4} lg={1}>
+                            <Button justIcon round color="rose">
+                              <Favorite className={classes_button.icons} />
+                            </Button>
+                          </GridItem>
+                          <GridItem xs={2} sm={0} md={4} lg={3}>
+                            <CustomInput
+                              labelText="댓글적기"
+                              id="material"
+                              formControlProps={{
+                                fullWidth: true,
+                              }}
+                              inputProps={{
+                                endAdornment: (
+                                  <InputAdornment position="end">
+                                    <People />
+                                  </InputAdornment>
+                                ),
+                              }}
+                            />
+                          </GridItem>
+                        </GridContainer>
+                      </div>
+                    </GridItem>
+                  ),
+                },
+              ]}
+            />
+            {/*feed2  */}
+            <CustomTabs
+              headerColor="primary"
+              tabs={[
+                {
+                  tabName: 'Drive Feed',
+                  tabIcon: Face,
+                  tabContent: (
+                    <p className={classes_image.textCenter}>
+                      <div id="images">
+                        <GridContainer>
+                          <GridItem
+                            xs={8}
+                            sm={12}
+                            className={classes_image.marginLeft}
+                          >
+                            <h4>박효성(Parking Park)</h4>
+                            <img
+                              width="50px"
+                              src={image}
+                              alt="..."
+                              className={
+                                classes_image.imgRaised +
+                                ' ' +
+                                classes_image.imgRoundedCircle +
+                                ' ' +
+                                classes_image.imgFluid
+                              }
+                            />
+                          </GridItem>
+                          <GridItem
+                            xs={8}
+                            sm={12}
+                            className={classes_image.marginLeft}
+                          >
+                            <h4>누적 운전시간 : 76 h</h4>
+
+                            <h4>피드 운전시간 :2h 32m </h4>
+                          </GridItem>
+                        </GridContainer>
+                        <GridContainer />
+                      </div>
+                      술한잔 했습니다.. 영화가 잘 안될수도 있습니다.. 드라이빙
+                      코스로 강릉찍고 오니 역시 자전거보다는 자동차인것
+                      같습니다.
+                      <div>
+                        <div>
+                          <GridContainer justify="left">
+                            <GridItem xs={12} sm={12} md={8}>
+                              <Button color="success">서울역</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button color="primary">잠실 새내역</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button color="warning">팔당댐</Button>
+                            </GridItem>
+                          </GridContainer>
+                        </div>
+                        <GridContainer>
+                          <GridItem xs={1} sm={0} md={4} lg={1}>
+                            <Button justIcon round color="rose">
+                              <Favorite className={classes_button.icons} />
+                            </Button>
+                          </GridItem>
+                          <GridItem xs={2} sm={0} md={4} lg={3}>
+                            <CustomInput
+                              labelText="댓글적기"
+                              id="material"
+                              formControlProps={{
+                                fullWidth: true,
+                              }}
+                              inputProps={{
+                                endAdornment: (
+                                  <InputAdornment position="end">
+                                    <People />
+                                  </InputAdornment>
+                                ),
+                              }}
+                            />
+                          </GridItem>
+                        </GridContainer>
+                      </div>
                     </p>
                   ),
                 },
                 {
-                  tabName: 'Settings',
-                  tabIcon: Build,
+                  tabName: 'Driving Route',
+                  tabIcon: Chat,
                   tabContent: (
-                    <p className={classes.textCenter}>
-                      think that’s a responsibility that I have, to push
-                      possibilities, to show people, this is the level that
-                      things could be at. So when you get something that has the
-                      name Kanye West on it, it’s supposed to be pushing the
-                      furthest possibilities. I will be the leader of a company
-                      that ends up being worth billions of dollars, because I
-                      got the answers. I understand culture. I am the nucleus.
+                    <GridItem>
+                      양양 지나면서 구도로 달리는 것도 좋은 드라이브 코스가 많을
+                      것 같지만 너무 피곤해서 그냥 빠른길로 갔습니다.
+                      <GridItem xs={0} sm={0} md={0}>
+                        <img
+                          width="1050px"
+                          alt="..."
+                          src={img2}
+                          className={navImageClasses}
+                        />
+                      </GridItem>
+                      <div>
+                        <GridContainer>
+                          <GridItem xs={1} sm={0} md={4} lg={1}>
+                            <Button justIcon round color="rose">
+                              <Favorite className={classes_button.icons} />
+                            </Button>
+                          </GridItem>
+                          <GridItem xs={2} sm={0} md={4} lg={3}>
+                            <CustomInput
+                              labelText="댓글적기"
+                              id="material"
+                              formControlProps={{
+                                fullWidth: true,
+                              }}
+                              inputProps={{
+                                endAdornment: (
+                                  <InputAdornment position="end">
+                                    <People />
+                                  </InputAdornment>
+                                ),
+                              }}
+                            />
+                          </GridItem>
+                        </GridContainer>
+                      </div>
+                    </GridItem>
+                  ),
+                },
+              ]}
+            />
+            {/* feed3 */}
+            <CustomTabs
+              headerColor="primary"
+              tabs={[
+                {
+                  tabName: 'Drive Feed',
+                  tabIcon: Face,
+                  tabContent: (
+                    <p className={classes_image.textCenter}>
+                      <div id="images">
+                        <GridContainer>
+                          <GridItem
+                            xs={8}
+                            sm={12}
+                            className={classes_image.marginLeft}
+                          >
+                            <h4>B_Rain</h4>
+                            <img
+                              width="50px"
+                              src={image}
+                              alt="..."
+                              className={
+                                classes_image.imgRaised +
+                                ' ' +
+                                classes_image.imgRoundedCircle +
+                                ' ' +
+                                classes_image.imgFluid
+                              }
+                            />
+                          </GridItem>
+                          <GridItem
+                            xs={8}
+                            sm={12}
+                            className={classes_image.marginLeft}
+                          >
+                            <h4>누적 운전시간 : 152 h</h4>
+
+                            <h4>피드 운전시간 :3h 32m </h4>
+                          </GridItem>
+                        </GridContainer>
+                        <GridContainer />
+                      </div>
+                      술한잔 했습니다.. 영화가 잘 안될수도 있습니다.. 드라이빙
+                      코스로 강릉찍고 오니 역시 자전거보다는 자동차인것
+                      같습니다.
+                      <div>
+                        <div>
+                          <GridContainer justify="left">
+                            <GridItem xs={12} sm={12} md={8}>
+                              <Button color="success">안양역</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button color="primary">북한강 휴게소</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button color="warning">남이섬</Button>
+                            </GridItem>
+                          </GridContainer>
+                        </div>
+                        <GridContainer>
+                          <GridItem xs={1} sm={0} md={4} lg={1}>
+                            <Button justIcon round color="rose">
+                              <Favorite className={classes_button.icons} />
+                            </Button>
+                          </GridItem>
+                          <GridItem xs={2} sm={0} md={4} lg={3}>
+                            <CustomInput
+                              labelText="댓글적기"
+                              id="material"
+                              formControlProps={{
+                                fullWidth: true,
+                              }}
+                              inputProps={{
+                                endAdornment: (
+                                  <InputAdornment position="end">
+                                    <People />
+                                  </InputAdornment>
+                                ),
+                              }}
+                            />
+                          </GridItem>
+                        </GridContainer>
+                      </div>
                     </p>
+                  ),
+                },
+                {
+                  tabName: 'Driving Route',
+                  tabIcon: Chat,
+                  tabContent: (
+                    <GridItem>
+                      양양 지나면서 구도로 달리는 것도 좋은 드라이브 코스가 많을
+                      것 같지만 너무 피곤해서 그냥 빠른길로 갔습니다.
+                      <GridItem xs={0} sm={0} md={0}>
+                        <img
+                          width="1050px"
+                          alt="..."
+                          src={img3}
+                          className={navImageClasses}
+                        />
+                      </GridItem>
+                      <div>
+                        <GridContainer>
+                          <GridItem xs={1} sm={0} md={4} lg={1}>
+                            <Button justIcon round color="rose">
+                              <Favorite className={classes_button.icons} />
+                            </Button>
+                          </GridItem>
+                          <GridItem xs={2} sm={0} md={4} lg={3}>
+                            <CustomInput
+                              labelText="댓글적기"
+                              id="material"
+                              formControlProps={{
+                                fullWidth: true,
+                              }}
+                              inputProps={{
+                                endAdornment: (
+                                  <InputAdornment position="end">
+                                    <People />
+                                  </InputAdornment>
+                                ),
+                              }}
+                            />
+                          </GridItem>
+                        </GridContainer>
+                      </div>
+                    </GridItem>
+                  ),
+                },
+              ]}
+            />
+            {/* feed4 */}
+            <CustomTabs
+              headerColor="primary"
+              tabs={[
+                {
+                  tabName: 'Drive Feed',
+                  tabIcon: Face,
+                  tabContent: (
+                    <p className={classes_image.textCenter}>
+                      <div id="images">
+                        <GridContainer>
+                          <GridItem
+                            xs={8}
+                            sm={12}
+                            className={classes_image.marginLeft}
+                          >
+                            <h4>B_Rain</h4>
+                            <img
+                              width="50px"
+                              src={image}
+                              alt="..."
+                              className={
+                                classes_image.imgRaised +
+                                ' ' +
+                                classes_image.imgRoundedCircle +
+                                ' ' +
+                                classes_image.imgFluid
+                              }
+                            />
+                          </GridItem>
+                          <GridItem
+                            xs={8}
+                            sm={12}
+                            className={classes_image.marginLeft}
+                          >
+                            <h4>누적 운전시간 : 152 h</h4>
+
+                            <h4>피드 운전시간 :3h 32m </h4>
+                          </GridItem>
+                        </GridContainer>
+                        <GridContainer />
+                      </div>
+                      술한잔 했습니다.. 영화가 잘 안될수도 있습니다.. 드라이빙
+                      코스로 강릉찍고 오니 역시 자전거보다는 자동차인것
+                      같습니다.
+                      <div>
+                        <div>
+                          <GridContainer justify="left">
+                            <GridItem xs={12} sm={12} md={8}>
+                              <Button color="success">서울</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button>→</Button>
+                              <Button color="warning">강릉</Button>
+                            </GridItem>
+                          </GridContainer>
+                        </div>
+                        <GridContainer>
+                          <GridItem xs={1} sm={0} md={4} lg={1}>
+                            <Button justIcon round color="rose">
+                              <Favorite className={classes_button.icons} />
+                            </Button>
+                          </GridItem>
+                          <GridItem xs={2} sm={0} md={4} lg={3}>
+                            <CustomInput
+                              labelText="댓글적기"
+                              id="material"
+                              formControlProps={{
+                                fullWidth: true,
+                              }}
+                              inputProps={{
+                                endAdornment: (
+                                  <InputAdornment position="end">
+                                    <People />
+                                  </InputAdornment>
+                                ),
+                              }}
+                            />
+                          </GridItem>
+                        </GridContainer>
+                      </div>
+                    </p>
+                  ),
+                },
+                {
+                  tabName: 'Driving Route',
+                  tabIcon: Chat,
+                  tabContent: (
+                    <GridItem>
+                      양양 지나면서 구도로 달리는 것도 좋은 드라이브 코스가 많을
+                      것 같지만 너무 피곤해서 그냥 빠른길로 갔습니다.
+                      <GridItem xs={0} sm={0} md={0}>
+                        <img
+                          width="1050px"
+                          alt="..."
+                          src={img1}
+                          className={navImageClasses}
+                        />
+                      </GridItem>
+                      <div>
+                        <GridContainer>
+                          <GridItem xs={1} sm={0} md={4} lg={1}>
+                            <Button justIcon round color="rose">
+                              <Favorite className={classes_button.icons} />
+                            </Button>
+                          </GridItem>
+                          <GridItem xs={2} sm={0} md={4} lg={3}>
+                            <CustomInput
+                              labelText="댓글적기"
+                              id="material"
+                              formControlProps={{
+                                fullWidth: true,
+                              }}
+                              inputProps={{
+                                endAdornment: (
+                                  <InputAdornment position="end">
+                                    <People />
+                                  </InputAdornment>
+                                ),
+                              }}
+                            />
+                          </GridItem>
+                        </GridContainer>
+                      </div>
+                    </GridItem>
                   ),
                 },
               ]}
             />
           </GridItem>
-          <GridItem xs={12} sm={10} md={5}>
-            <SnackbarContent
-              message={
-                <span>
-                  <b>Driving Assist:</b> {"'"}최근 급출발 횟수가 전주 대비
-                  15%증가했습니다. 명상이 필요합니다
-                </span>
-              }
-              close
-              color="info"
-              icon="info_outline"
-            />
-            <SnackbarContent
-              message={
-                <span>
-                  <b>Level Up:</b> 차선 중앙 유지 수치가 전주 대비 25%
-                  증가했습니다.exp+1
-                </span>
-              }
-              close
-              color="success"
-              icon="info_outline"
-            />
-            <SnackbarContent
-              message={
-                <span>
-                  <b>Level Up:</b> 차선 중앙 유지 수치가 전주 대비 25%
-                  증가했습니다.exp+1
-                </span>
-              }
-              close
-              color="success"
-              icon="info_outline"
-            />
-          </GridItem>
+          <GridContainer>
+            <GridItem xs={10} sm={5} md={12}>
+              <SnackbarContent
+                message={
+                  <span>
+                    <b>Driving Assist:</b> {"'"}최근 급출발 횟수가 전주 대비
+                    15%증가했습니다. 명상이 필요합니다
+                  </span>
+                }
+                close
+                color="info"
+                icon="info_outline"
+              />
+              <SnackbarContent
+                message={
+                  <span>
+                    <b>Level Up:</b> 차선 중앙 유지 수치가 전주 대비 25%
+                    증가했습니다.exp+1
+                  </span>
+                }
+                close
+                color="success"
+                icon="info_outline"
+              />
+              <SnackbarContent
+                message={
+                  <span>
+                    <b>Level Up:</b> 차선 중앙 유지 수치가 전주 대비 25%
+                    증가했습니다.exp+1
+                  </span>
+                }
+                close
+                color="success"
+                icon="info_outline"
+              />
+            </GridItem>
+          </GridContainer>
           <GridItem>
             <div className={classes_carousel.section}>
               <div className={classes_carousel.container}>
