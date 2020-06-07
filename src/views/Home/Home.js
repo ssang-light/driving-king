@@ -14,40 +14,36 @@ import CustomTabs from 'components/CustomTabs/CustomTabs.js';
 import styles from 'assets/jss/material-kit-react/views/componentsSections/tabsStyle.js';
 import NavBar from 'components/DrivingKing/NavBar';
 
-//notification
-
-// @material-ui/icons
+//==notification===============================================
 import Check from '@material-ui/icons/Check';
 import Warning from '@material-ui/icons/Warning';
 // core components
 import SnackbarContent from 'components/Snackbar/SnackbarContent.js';
 import Clearfix from 'components/Clearfix/Clearfix.js';
 
-/////
+//=============================================================
 
-//image
+//==image====================================================
 import styles2 from 'assets/jss/material-kit-react/views/componentsSections/typographyStyle.js';
 
 import image from 'assets/img/faces/avatar.jpg';
 
-//////
+//============================================================
 
-//carousel
+//==carousel==================================================
 import styles3 from 'assets/jss/material-kit-react/views/componentsSections/carouselStyle.js';
 
 import Carousel from 'react-slick';
 // @material-ui/core components
-
 import LocationOn from '@material-ui/icons/LocationOn';
-// core components
 
 import Card from 'components/Card/Card.js';
 
 import image1 from 'assets/img/bg.jpg';
 import image2 from 'assets/img/bg2.jpg';
 import image3 from 'assets/img/bg3.jpg';
+//=============================================================
 
-/////
 const useStyles = makeStyles(styles);
 const useStyles_image = makeStyles(styles2);
 const useStyles_carousel = makeStyles(styles3);
@@ -69,10 +65,10 @@ export default function ProfilePage(props) {
       <NavBar />
       <div id="nav-tabs">
         <h3>Navigation Tabs</h3>
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
+        <GridContainer justify="center">
+          <GridItem xs={4} sm={12} md={8}>
             <h3>
-              <small>Tabs with Icons on Card</small>
+              <small>드라이빙 피드</small>
             </h3>
             <CustomTabs
               headerColor="primary"
@@ -203,7 +199,7 @@ export default function ProfilePage(props) {
                   <GridItem
                     xs={12}
                     sm={12}
-                    md={8}
+                    md={80}
                     className={classes_carousel.marginAuto}
                   >
                     <Card carousel>
