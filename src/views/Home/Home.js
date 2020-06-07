@@ -80,7 +80,6 @@ export default function ProfilePage(props) {
     <Fragment>
       <NavBar />
       <div id="nav-tabs">
-        <h3>Navigation Tabs</h3>
         <GridContainer justify="center">
           <GridItem xs={4} sm={12} md={8}>
             <h3>
@@ -95,10 +94,6 @@ export default function ProfilePage(props) {
                   tabContent: (
                     <p className={classes_image.textCenter}>
                       <div id="images">
-                        <div className={classes_image.title}>
-                          <h2>Images</h2>
-                        </div>
-                        <br />
                         <GridContainer>
                           <GridItem
                             xs={8}
@@ -107,6 +102,7 @@ export default function ProfilePage(props) {
                           >
                             <h4>B_Rain</h4>
                             <img
+                              width="50px"
                               src={image}
                               alt="..."
                               className={
