@@ -43,14 +43,30 @@ import image1 from 'assets/img/bg.jpg';
 import image2 from 'assets/img/bg2.jpg';
 import image3 from 'assets/img/bg3.jpg';
 //=============================================================
+//==button==================================================
+import Button from 'components/CustomButtons/Button.js';
+import styles4 from 'assets/jss/material-kit-react/views/componentsSections/basicsStyle.js';
+import Favorite from '@material-ui/icons/Favorite';
+
+//==========================================================
+//==custom input==================================================
+import CustomInput from 'components/CustomInput/CustomInput.js';
+import styles5 from 'assets/jss/material-kit-react/views/componentsSections/basicsStyle.js';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import People from '@material-ui/icons/People';
+//==========================================================
 
 const useStyles = makeStyles(styles);
 const useStyles_image = makeStyles(styles2);
 const useStyles_carousel = makeStyles(styles3);
+const useStyles_button = makeStyles(styles4);
+const useStyles_custom_input = makeStyles(styles5);
 export default function ProfilePage(props) {
   const classes = useStyles();
   const classes_image = useStyles_image();
   const classes_carousel = useStyles_carousel();
+  const classes_button = useStyles_button();
+  const classes_custom_input = useStyles_custom_input();
   const carousel_settings = {
     dots: true,
     infinite: true,
@@ -64,7 +80,6 @@ export default function ProfilePage(props) {
     <Fragment>
       <NavBar />
       <div id="nav-tabs">
-        <h3>Navigation Tabs</h3>
         <GridContainer justify="center">
           <GridItem xs={4} sm={12} md={8}>
             <h3>
@@ -79,18 +94,15 @@ export default function ProfilePage(props) {
                   tabContent: (
                     <p className={classes_image.textCenter}>
                       <div id="images">
-                        <div className={classes_image.title}>
-                          <h2>Images</h2>
-                        </div>
-                        <br />
                         <GridContainer>
                           <GridItem
                             xs={8}
                             sm={12}
                             className={classes_image.marginLeft}
                           >
-                            <h4>User Name</h4>
+                            <h4>B_Rain</h4>
                             <img
+                              width="50px"
                               src={image}
                               alt="..."
                               className={
@@ -113,13 +125,34 @@ export default function ProfilePage(props) {
                         </GridContainer>
                         <GridContainer />
                       </div>
-                      I think that’s a responsibility that I have, to push
-                      possibilities, to show people, this is the level that
-                      things could be at. So when you get something that has the
-                      name Kanye West on it, it’s supposed to be pushing the
-                      furthest possibilities. I will be the leader of a company
-                      that ends up being worth billions of dollars, because I
-                      got the answers. I understand culture. I am the nucleus.
+                      술한잔 했습니다.. 영화가 잘 안될수도 있습니다.. 드라이빙
+                      코스로 강릉찍고 오니 역시 자전거보다는 자동차인것
+                      같습니다.
+                      <div>
+                        <GridContainer>
+                          <GridItem xs={1} sm={0} md={4} lg={1}>
+                            <Button justIcon round color="primary">
+                              <Favorite className={classes_button.icons} />
+                            </Button>
+                          </GridItem>
+                          <GridItem xs={2} sm={0} md={4} lg={3}>
+                            <CustomInput
+                              labelText="댓글적기"
+                              id="material"
+                              formControlProps={{
+                                fullWidth: true,
+                              }}
+                              inputProps={{
+                                endAdornment: (
+                                  <InputAdornment position="end">
+                                    <People />
+                                  </InputAdornment>
+                                ),
+                              }}
+                            />
+                          </GridItem>
+                        </GridContainer>
+                      </div>
                     </p>
                   ),
                 },
