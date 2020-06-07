@@ -16,12 +16,6 @@ import DifficultyPage from 'views/DifficultyPage/DifficultyPage.js';
 import Components from 'views/Components/Components';
 var hist = createBrowserHistory();
 
-const API_KEY = process.env.REACT_APP_KAKAOMAP_API_KEY;
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${API_KEY}`;
-document.head.append(script);
-
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
