@@ -21,10 +21,15 @@ import CustomLinearProgress from 'components/CustomLinearProgress/CustomLinearPr
 import profile from 'assets/img/faces/younho9.jpg';
 
 import sm5 from 'assets/img/cars/sm5.png';
-import studio2 from 'assets/img/examples/studio-2.jpg';
-import studio3 from 'assets/img/examples/studio-3.jpg';
-import studio4 from 'assets/img/examples/studio-4.jpg';
-import studio5 from 'assets/img/examples/studio-5.jpg';
+import sm5_2 from 'assets/img/cars/sm5_2.jpg';
+import sm5_3 from 'assets/img/cars/sm5_3.jpeg';
+
+import c1 from 'assets/img/course/1.jpg';
+import c2 from 'assets/img/course/2.jpg';
+import c3 from 'assets/img/course/3.jpg';
+import c4 from 'assets/img/course/4.jpg';
+import c5 from 'assets/img/course/5.jpg';
+
 import work1 from 'assets/img/examples/olu-eletu.jpg';
 import work2 from 'assets/img/examples/clem-onojeghuo.jpg';
 import work3 from 'assets/img/examples/cynthia-del-rio.jpg';
@@ -83,6 +88,7 @@ export default function ProfilePage(props) {
                 <GridItem xs={6} sm={6} md={6} lg={6} justify="center">
                   <div className={classes.title}>
                     <h3>나의 운전 점수</h3>
+                    <h4 size="1">누적 운전 시간 : 9 시간 45 분</h4>
                   </div>
                   <div>총점 : 75</div>
                   <CustomLinearProgress
@@ -105,6 +111,27 @@ export default function ProfilePage(props) {
                     value={25}
                     style={{ width: '100%', display: 'inline-block' }}
                   />
+                  <div>평균 속도 : 43</div>
+                  <CustomLinearProgress
+                    variant="determinate"
+                    color="info"
+                    value={43}
+                    style={{ width: '100%', display: 'inline-block' }}
+                  />
+                  <div>과속 횟수 : 36</div>
+                  <CustomLinearProgress
+                    variant="determinate"
+                    color="rose"
+                    value={36}
+                    style={{ width: '100%', display: 'inline-block' }}
+                  />
+                  <div>급감속 횟수 : 13</div>
+                  <CustomLinearProgress
+                    variant="determinate"
+                    color="gray"
+                    value={13}
+                    style={{ width: '100%', display: 'inline-block' }}
+                  />
                 </GridItem>
                 {/* </GridContainer> */}
                 <GridContainer justify="left">
@@ -114,7 +141,10 @@ export default function ProfilePage(props) {
                       {/* <Button>일반</Button> */}
                       {/* <Button color="primary">1년 무사고</Button> */}
                       {/* <Button color="info">2년 무사고</Button> */}
-                      <Button color="success" size="lg"> 3년 무사고 </Button>
+                      <Button color="success" size="lg">
+                        {' '}
+                        3년 무사고{' '}
+                      </Button>
                       {/* <Button color="warning">5년 무사고</Button> */}
                       {/* <Button color="danger">10년 무사고</Button> */}
                       {/* <Button color="rose">Rose</Button> */}
@@ -142,19 +172,14 @@ export default function ProfilePage(props) {
                             />
                             <img
                               alt="..."
-                              src={studio2}
+                              src={sm5_2}
                               className={navImageClasses}
                             />
                           </GridItem>
                           <GridItem xs={12} sm={12} md={4}>
                             <img
                               alt="..."
-                              src={studio5}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={studio4}
+                              src={sm5_3}
                               className={navImageClasses}
                             />
                           </GridItem>
@@ -204,31 +229,36 @@ export default function ProfilePage(props) {
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
+                            남양주 드라이빙 코스
                             <img
                               alt="..."
-                              src={work4}
+                              src={c1}
                               className={navImageClasses}
                             />
+                            성수역 - 용산역
                             <img
                               alt="..."
-                              src={studio3}
+                              src={c2}
                               className={navImageClasses}
                             />
                           </GridItem>
                           <GridItem xs={12} sm={12} md={4}>
+                          집 - 의왕시청
                             <img
                               alt="..."
-                              src={work2}
+                              src={c3}
                               className={navImageClasses}
                             />
+                            팔당댐 드라이빙 코스
                             <img
                               alt="..."
-                              src={work1}
+                              src={c4}
                               className={navImageClasses}
                             />
+                            아주대학교 - 광교중앙역
                             <img
                               alt="..."
-                              src={sm5}
+                              src={c5}
                               className={navImageClasses}
                             />
                           </GridItem>
