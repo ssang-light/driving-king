@@ -138,14 +138,10 @@ export default function ProfilePage(props) {
                   <div className={classes.title}>
                     <h3>나의 운전 등급</h3>
                     <GridItem xs={6} sm={6} md={6} lg={6}>
-                      {/* <Button>일반</Button> */}
-                      {/* <Button color="primary">1년 무사고</Button> */}
-                      {/* <Button color="info">2년 무사고</Button> */}
                       <Button color="success" size="lg">
-                        {' '}
-                        3년 무사고{' '}
+                        3년 무사고
                       </Button>
-                      {/* <Button color="warning">5년 무사고</Button> */}
+                      <Button color="warning" size="lg">경기도 랭킹1위</Button>
                       {/* <Button color="danger">10년 무사고</Button> */}
                       {/* <Button color="rose">Rose</Button> */}
                     </GridItem>

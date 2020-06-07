@@ -76,6 +76,7 @@ export default function RankingPage(props) {
                       tabIcon: LocationCity,
                       tabContent: (
                         <GridContainer justify="center">
+                           <h3>나는 1 등 운전왕</h3>
                           <GridItem xs={6} sm={6} md={6} lg={6}>
                             <List className={classes.root}>
                               <ListItem alignItems="center">
@@ -223,6 +224,7 @@ export default function RankingPage(props) {
                       tabIcon: Public,
                       tabContent: (
                         <GridContainer justify="center">
+                          <h3>나는 4 등 운전왕</h3>
                           <GridItem xs={6} sm={6} md={6} lg={6}>
                             <List className={classes.root}>
                               <ListItem alignItems="center">
