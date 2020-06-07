@@ -18,19 +18,22 @@ import HeaderLinks from 'components/Header/HeaderLinks.js';
 import NavPills from 'components/NavPills/NavPills.js';
 import Parallax from 'components/Parallax/Parallax.js';
 import CustomLinearProgress from 'components/CustomLinearProgress/CustomLinearProgress.js';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
 
-import profile from 'assets/img/faces/younho9.jpg';
+import ho from 'assets/img/faces/younho9.jpg';
+import hyo from 'assets/img/faces/hyo.JPG';
+import ju from 'assets/img/faces/ju.jpeg';
+import song from 'assets/img/faces/송강호.jpg';
+import jo from 'assets/img/faces/조정석.jpg';
+import jose from 'assets/img/faces/조세호.png';
 
 import sm5 from 'assets/img/cars/sm5.png';
-import studio2 from 'assets/img/examples/studio-2.jpg';
-import studio3 from 'assets/img/examples/studio-3.jpg';
-import studio4 from 'assets/img/examples/studio-4.jpg';
-import studio5 from 'assets/img/examples/studio-5.jpg';
-import work1 from 'assets/img/examples/olu-eletu.jpg';
-import work2 from 'assets/img/examples/clem-onojeghuo.jpg';
-import work3 from 'assets/img/examples/cynthia-del-rio.jpg';
-import work4 from 'assets/img/examples/mariya-georgieva.jpg';
-import work5 from 'assets/img/examples/clem-onojegaw.jpg';
 
 import styles from 'assets/jss/material-kit-react/views/profilePage.js';
 import Badge from 'components/Badge/Badge.js';
@@ -54,31 +57,6 @@ export default function RankingPage(props) {
         <div>
           <div className={classes.container}>
             <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={6}>
-                <div className={classes.profile}>
-                  <div>
-                    <img src={profile} alt="..." className={imageClasses} />
-                  </div>
-                  <div className={classes.name}>
-                    <h3 className={classes.title}>추연호</h3>
-                    <h6>운전경력 : 6년</h6>
-                    <h6>지역: 경기</h6>
-                    <h6>면허 취득일 : 2014. 12. 24 </h6>
-                    <Button justIcon link className={classes.margin5}>
-                      <i className={'fab fa-twitter'} />
-                    </Button>
-                    <Button justIcon link className={classes.margin5}>
-                      <i className={'fab fa-instagram'} />
-                    </Button>
-                    <Button justIcon link className={classes.margin5}>
-                      <i className={'fab fa-facebook'} />
-                    </Button>
-                  </div>
-                </div>
-              </GridItem>
-            </GridContainer>
-            <div className={classes.description}></div>
-            <GridContainer justify="center">
               <GridItem
                 xs={12}
                 sm={12}
@@ -95,17 +73,144 @@ export default function RankingPage(props) {
                       tabIcon: LocationCity,
                       tabContent: (
                         <GridContainer justify="center">
-                          <GridItem xs={12} sm={12} md={4} lg={12}>
-                            <div className={classes.title}>
-                              <h3>경기도 운전 랭킹</h3>
-                            </div>
-                            <div>1. 경주현  98점</div>
-                            <div>2. 추연호  75점</div>
-                            <div>3. 박효성  72점</div>
-                            <div>4. 김덕배  67점</div>
-                            <div>5. 홍시덕  54점</div>
-                        
-
+                          <GridItem xs={6} sm={6} md={6} lg={6}>
+                            <List className={classes.root}>
+                              <ListItem alignItems="center">
+                                <ListItemAvatar>
+                                  <Avatar alt="추연호" src={ho} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="1등. 점수 : 98점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        추연호
+                                      </Typography>
+                                      {' 요즘 세상 운전은 기본이죠.'}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                              <Divider variant="inset" component="li" />
+                              <ListItem alignItems="center">
+                                <ListItemAvatar>
+                                  <Avatar alt="박효성" src={hyo} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="2등. 점수 : 82점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        박효성
+                                      </Typography>
+                                      {' 안전운전이 제일이죠..!'}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                              <Divider variant="inset" component="li" />
+                              <ListItem alignItems="flex-start">
+                                <ListItemAvatar>
+                                  <Avatar alt="경주현" src={ju} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="3등. 점수 : 73점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        경주현
+                                      </Typography>
+                                      {' 안전의 소중함을 알아야해요! '}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                              <Divider variant="inset" component="li" />
+                              <ListItem alignItems="flex-start">
+                                <ListItemAvatar>
+                                  <Avatar alt="송강호" src={song} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="4등. 점수 : 69점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        송강호
+                                      </Typography>
+                                      {' 택시운전은 안전이 필수죠! '}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                              <Divider variant="inset" component="li" />
+                              <ListItem alignItems="flex-start">
+                                <ListItemAvatar>
+                                  <Avatar alt="조정석" src={jo} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="5등. 점수 : 66점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        조정석
+                                      </Typography>
+                                      {' 너두 운전 할 수 있어! '}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                              <Divider variant="inset" component="li" />
+                              <ListItem alignItems="flex-start">
+                                <ListItemAvatar>
+                                  <Avatar
+                                    alt="조세호"
+                                    className={classes.large}
+                                    src={jose}
+                                  />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="6등. 점수 : 55점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        조세호
+                                      </Typography>
+                                      {' 조금더 분발하겠습니다! '}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                            </List>
                           </GridItem>
                         </GridContainer>
                       ),
@@ -115,10 +220,144 @@ export default function RankingPage(props) {
                       tabIcon: Public,
                       tabContent: (
                         <GridContainer justify="center">
-                          <GridItem xs={12} sm={12} md={4}>
-                            <div className={classes.title}>
-                              <h3>전국 운전 랭킹</h3>
-                            </div>
+                          <GridItem xs={6} sm={6} md={6} lg={6}>
+                            <List className={classes.root}>
+                              <ListItem alignItems="center">
+                                <ListItemAvatar>
+                                  <Avatar alt="추연호" src={ho} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="1등. 점수 : 98점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        추연호
+                                      </Typography>
+                                      {' 요즘 세상 운전은 기본이죠.'}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                              <Divider variant="inset" component="li" />
+                              <ListItem alignItems="center">
+                                <ListItemAvatar>
+                                  <Avatar alt="박효성" src={hyo} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="2등. 점수 : 82점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        박효성
+                                      </Typography>
+                                      {' 안전운전이 제일이죠..!'}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                              <Divider variant="inset" component="li" />
+                              <ListItem alignItems="flex-start">
+                                <ListItemAvatar>
+                                  <Avatar alt="경주현" src={ju} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="3등. 점수 : 73점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        경주현
+                                      </Typography>
+                                      {' 안전의 소중함을 알아야해요! '}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                              <Divider variant="inset" component="li" />
+                              <ListItem alignItems="flex-start">
+                                <ListItemAvatar>
+                                  <Avatar alt="송강호" src={song} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="4등. 점수 : 69점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        송강호
+                                      </Typography>
+                                      {' 택시운전은 안전이 필수죠! '}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                              <Divider variant="inset" component="li" />
+                              <ListItem alignItems="flex-start">
+                                <ListItemAvatar>
+                                  <Avatar alt="조정석" src={jo} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="5등. 점수 : 66점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        조정석
+                                      </Typography>
+                                      {' 너두 운전 할 수 있어! '}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                              <Divider variant="inset" component="li" />
+                              <ListItem alignItems="flex-start">
+                                <ListItemAvatar>
+                                  <Avatar
+                                    alt="조세호"
+                                    className={classes.large}
+                                    src={jose}
+                                  />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary="6등. 점수 : 55점"
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                      >
+                                        조세호
+                                      </Typography>
+                                      {' 조금더 분발하겠습니다! '}
+                                    </React.Fragment>
+                                  }
+                                />
+                              </ListItem>
+                            </List>
                           </GridItem>
                         </GridContainer>
                       ),
