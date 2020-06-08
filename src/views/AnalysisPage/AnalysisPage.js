@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+/* global kakao */
+import React, { Fragment, useEffect } from 'react';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 // @material-ui/core components
@@ -30,14 +31,59 @@ import work2 from 'assets/img/examples/clem-onojeghuo.jpg';
 import work3 from 'assets/img/examples/cynthia-del-rio.jpg';
 import work4 from 'assets/img/examples/mariya-georgieva.jpg';
 import work5 from 'assets/img/examples/clem-onojegaw.jpg';
+import carMarkerImage from 'assets/img/car-marker.png';
 
 import styles from 'assets/jss/material-kit-react/views/profilePage.js';
 import NavBar from 'components/DrivingKing/NavBar';
 import Badge from 'components/Badge/Badge.js';
+import Positions from './positions.json';
+import './Map.css';
 
 const useStyles = makeStyles(styles);
 
 export default function ProfilePage(props) {
+  useEffect(() => {
+    const script = document.createElement('script');
+    const API_KEY = process.env.REACT_APP_KAKAOMAP_API_KEY;
+    script.type = 'text/javascript';
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${API_KEY}&libraries=services,clusterer,drawing&autoload=false`;
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      kakao.maps.load(() => {
+        let el = document.getElementById('map');
+        let map = new kakao.maps.Map(el, {
+          center: new kakao.maps.Coords(523951.25, 1085073.75),
+          level: 12,
+        });
+
+        let markers = [];
+
+        let imageSrc = carMarkerImage;
+        let imageSize = new kakao.maps.Size(30, 30);
+        let imageOption = { offset: new kakao.maps.Point(15, 0) };
+        let markerImage = new kakao.maps.MarkerImage(
+          imageSrc,
+          imageSize,
+          imageOption,
+        );
+
+        for (const position of Positions.positions) {
+          markers.push(
+            new kakao.maps.Marker({
+              position: new kakao.maps.LatLng(position.lat, position.lng),
+              image: markerImage,
+            }),
+          );
+        }
+
+        for (const marker of markers) {
+          marker.setMap(map);
+        }
+      });
+    };
+  });
+
   const classes = useStyles();
   const { ...rest } = props;
   const imageClasses = classNames(
@@ -114,7 +160,10 @@ export default function ProfilePage(props) {
                       {/* <Button>일반</Button> */}
                       {/* <Button color="primary">1년 무사고</Button> */}
                       {/* <Button color="info">2년 무사고</Button> */}
-                      <Button color="success" size="lg"> 3년 무사고 </Button>
+                      <Button color="success" size="lg">
+                        {' '}
+                        3년 무사고{' '}
+                      </Button>
                       {/* <Button color="warning">5년 무사고</Button> */}
                       {/* <Button color="danger">10년 무사고</Button> */}
                       {/* <Button color="rose">Rose</Button> */}
@@ -166,34 +215,8 @@ export default function ProfilePage(props) {
                       tabIcon: Map,
                       tabContent: (
                         <GridContainer justify="center">
-                          <GridItem xs={12} sm={12} md={4}>
-                            <img
-                              alt="..."
-                              src={work1}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work2}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work3}
-                              className={navImageClasses}
-                            />
-                          </GridItem>
-                          <GridItem xs={12} sm={12} md={4}>
-                            <img
-                              alt="..."
-                              src={work4}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work5}
-                              className={navImageClasses}
-                            />
+                          <GridItem xs={12} sm={12} md={12}>
+                            <div id="map"></div>
                           </GridItem>
                         </GridContainer>
                       ),
